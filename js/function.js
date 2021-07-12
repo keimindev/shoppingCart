@@ -11,10 +11,6 @@ const cartBtn = document.querySelector('.cart');
 const closeList = document.querySelector('.close');
 const deleteAllBtn = document.querySelector('.deleteall-btn');
 
-let buttons = [];
-let item, itemPrice, itemImg, itemAmount;
-let productOrder = [];
-
 
 //UI - Get Donuts from Array
 let results = "";
