@@ -12,6 +12,8 @@ body {
   font-family: 'Mukta', sans-serif;
 }
 
+body.noscroll{ overflow: hidden;}
+
 li {
   list-style: none;
 }
@@ -20,6 +22,7 @@ li {
 
 .container {
   width: 100%;
+  background-color: #fff;
 }
 
 header {
@@ -140,6 +143,7 @@ header {
   grid-template: 1fr 1fr 1fr 1fr;
 }
 
+
 .product-box {
   padding: 80px 10px;
   text-align: center;
@@ -246,9 +250,10 @@ header {
 
 .order-box{
   max-height: 700px;
-  scroll-behavior: auto;
-  overflow-y: scroll;
+  overflow-y: auto;
+
 }
+
 
 .order-list {
   display: block;
@@ -385,6 +390,8 @@ header {
   left: 0;
   z-index: 3;
   display: none;
+  pointer-events:none;
+  scroll;
 }
 
 .overlay.active {

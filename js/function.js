@@ -1,6 +1,7 @@
 'use strict';
 
 //Elements
+const body = document.querySelector('body');
 const content = document.querySelector('.product');
 const orderBox = document.querySelector('.shopping-detail');
 const orderList = document.querySelector('.order-box');
@@ -186,18 +187,21 @@ function displayCart() {
 cartBtn.addEventListener("click", () => {
   orderBox.classList.add('active');
   overlay.classList.add('active');
+  body.classList.add('noscroll');
 })
 
 //Close OderList
 closeList.addEventListener("click", () => {
   orderBox.classList.remove('active');
   overlay.classList.remove('active');
+  body.classList.remove('noscroll');
 })
 
 //delte
 deleteAllBtn.addEventListener('click', () =>{
   orderList.remove();
   cartBtn.classList.remove('add-numb');
+  totalPrice.innerHTML = '';
   localStorage.removeItem('totalCost');
   localStorage.removeItem('cartNumbers');
   localStorage.removeItem('productsInCart');
