@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Mukta', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+/* ############## Header ################ */
+
+.container {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  padding: 30px 10%;
+  background-color: #f8faef;
+}
+
+.sns {
+  display: flex;
+  width: 20%;
+}
+
+.sns li {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  text-align: center;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.3s .1s;
+}
+
+.sns li i {
+  font-size: 14px;
+  color: #aaa;
+  transition: all 0.3s 0.1s;
+}
+
+
+
+.sns li:hover {
+  border-color: #222;
+}
+
+.sns li:hover i {
+  color: #222;
+}
+
+
+.logo {
+  width: 60%;
+  text-align: center;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.gnb {
+  width: 20%;
+  padding-left: 10%;
+  display: flex;
+}
+
+.gnb div {
+  width: 90px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #f46310;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.login {
+  border: 1px solid #f46310;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+
+.cart {
+  background-color: #f46310;
+  color: #fff;
+  position: relative;
+  transition: all 0.3s;
+}
+
+
+.cart::after {
+  content: attr(data-count);
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.cart.add-numb::after {
+  opacity: 1;
+}
+
+
+.login:hover {
+  background-color: #f46310;
+  color: #fff;
+}
+
+.cart:hover {
+  background-color: red;
+}
+
+/* ############## Product ################ */
+
+
+.product {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  grid-template: 1fr 1fr 1fr 1fr;
+}
+
+.product-box {
+  padding: 80px 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.product-box img {
+  width: 50%;
+}
+
+.product-img.active::before {
+  content: 'Dounts of Month';
+  background-color: gold;
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+}
+
+.name {
+  font-size: 18px;
+  text-align: center;
+}
+
+.price {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+
+}
+
+.product-info span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #f46310;
+  border-radius: 30%;
+  margin: 10px auto;
+
+}
+
+.add-btn {
+  width: 80px;
+  padding: 5px 15px;
+  background-color: #f46310;
+  border-radius: 10px;
+  color: #fff;
+  margin: 10px auto;
+  transition: 0.3s 0.1s;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #222;
+}
+
+
+
+/* ############## Order ################ */
+
+.shopping-detail {
+  width: 900px;
+  max-height: 900px;
+  padding: 50px 150px;
+  background: linear-gradient(270deg, #ff7d32, #f44510);
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translate(0%, -50%);
+  border-radius: 10px;
+  z-index: 5;
+  display: none;
+  transition: 0.8s 0.1s;
+}
+
+.close {
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  transition: 0.3s 0.1s;
+  cursor: pointer;
+}
+
+.close:hover {
+  transform: rotate(180deg);
+}
+
+.shopping-detail.active {
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.order-box{
+  max-height: 700px;
+  scroll-behavior: auto;
+  overflow-y: scroll;
+}
+
+.order-list {
+  display: block;
+}
+
+.order-list>div{
+  display: flex; 
+  padding: 20px 0;
+}
+
+.order-food {
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.order-food img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+
+}
+
+.order-info {
+  width: 290px;
+  padding: 50px 0px 0 10px;
+  text-align: center;
+}
+
+.order-product {
+  text-align: center;
+  padding-top: 20px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+
+}
+
+.order-price {
+  height: 70px;
+  line-height: 70px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.order-amount {
+  display: block;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.order-amount span {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.countUp,
+.countDown {
+  height: 40px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+}
+
+
+.order-list>div>div:nth-child(4) {
+  padding-top: 15px;
+  height: 200px;
+  line-height: 200px;
+}
+
+.order-list>div>div:nth-child(4) i {
+  font-size: 24px;
+  color: black;
+}
+
+.total {
+  border-top: 2px solid #eee;
+  margin-top: 10px;
+  text-align: right;
+  font-size: 18px;
+  color: #fff;
+}
+
+.total-price {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.order-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.order-btns div {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #f46310;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background-color: #f75d03;
+  border:1px solid #fff;
+  color: #fff;
+}
+
+.deleteall-btn:hover{
+  background-color: #222;
+  color: #fff;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(161, 161, 161, 0.301);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
